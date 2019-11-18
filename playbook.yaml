@@ -1,0 +1,11 @@
+---
+#playbook.yaml
+
+- name: DISPLAY THE INVENTORY VARS
+  hosts: nxos, core # These are dynamically generated groups from the plugin
+  gather_facts: no
+  tasks:
+    - name: DISPLAY THE HOST VARS
+      debug:
+        msg: "The mgmt IP is {{ ansible_host }} and platorm is {{ ansible_network_os }}"
+      
