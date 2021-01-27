@@ -1,0 +1,8 @@
+---
+- hosts: rtr1
+  gather_facts: no
+  tasks:
+    - name: Replace config
+      ios_command:
+        commands:
+          - configure replace flash:running.config force
